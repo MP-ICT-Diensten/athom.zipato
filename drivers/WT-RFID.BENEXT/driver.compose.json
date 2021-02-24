@@ -1,18 +1,22 @@
 {
-    "id": "WT-RFID.EU",
+    "id": "WT-RFID.BENEXT",
     "name": {
-        "en": "Mini RFID keypad",
-        "nl": "Mini RFID keypad"
+        "en": "BeNext RFID keypad",
+        "nl": "BeNext RFID keypad"
     },
     "zwave": {
-        "manufacturerId": 151,
-        "productTypeId": 24881,
-        "productId": 17665,
+        "manufacturerId": 138,
+        "productTypeId": 7,
+        "productId": [
+            512,
+            256,
+            257
+        ],
         "learnmode": {
-            "image": "/drivers/WT-RFID.EU/assets/learnmode.svg",
+            "image": "/drivers/WT-RFID.BENEXT/assets/learnmode.svg",
             "instruction": {
-                "en": "Press and hold the tamper switch about a second until indication LED lights up, then immediately release to start the add/remove routine. Note: the rfid keypad must be close to homey.",
-                "nl": "Houd de sabotageschakelaar ongeveer een seconde ingedrukt totdat de indicatie-LED aan gaat en laat hem dan meteen los om de procedure voor toevoegen / verwijderen te starten. Let op: de rfid keypad moet dicht bij homey in de buurt zijn."
+                "en": "Press and hold the Enter button about two second until indication LED lights up, then immediately release to start the add/remove routine. Note: the rfid keypad must be close to homey.",
+                "nl": "Houd de Enter toets ongeveer twee seconde ingedrukt totdat de indicatie-LED aan gaat en laat hem dan meteen los om de procedure voor toevoegen / verwijderen te starten. Let op: de rfid keypad moet dicht bij homey in de buurt zijn."
             }
         },
         "associationGroups": [
@@ -23,7 +27,7 @@
         "defaultConfiguration": [{
             "id": 7,
             "size": 1,
-            "value": 0
+            "value": 1
         }]
     },
     "class": "homealarm",
@@ -53,7 +57,7 @@
         "batteries": [ "AA", "AA" ]
     },
     "images": {
-        "large": "/drivers/WT-RFID.EU/assets/images/large.png",
-        "small": "/drivers/WT-RFID.EU/assets/images/small.png"
+        "large": "/drivers/WT-RFID.BENEXT/assets/images/large.png",
+        "small": "/drivers/WT-RFID.BENEXT/assets/images/small.png"
     }
 }

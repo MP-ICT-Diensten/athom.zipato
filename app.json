@@ -38,6 +38,280 @@
   "flow": {
     "triggers": [
       {
+        "id": "WT-RFID.BENEXT-start_scene",
+        "title": {
+          "en": "Scene activated",
+          "nl": "Scene geactiveerd"
+        },
+        "hint": {
+          "en": "Triggered when a user presses numbers without pressing home/away first. Please note that trying to trigger multiple scenes after each other without an home/away event screws up the tag reader in sending some random scene numbers somehow.",
+          "nl": "Wordt uitgevoerd wanneer iemand een nummber indrukt zonder home/away te gebruiken. Houdt er rekening mee dat als je meerdere scenes achter alkaar wilt uitvoeren zonder dat er een home/away event tussen zit dat de tag reader dan random scene nummers verstuurd naar Homey en er geen touw meer aan vast te knopen is."
+        },
+        "tokens": [
+          {
+            "name": "sceneId",
+            "type": "number",
+            "title": {
+              "en": "Scene ID",
+              "nl": "Scene Nr"
+            },
+            "example": 1
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=WT-RFID.BENEXT"
+          }
+        ]
+      },
+      {
+        "id": "WT-RFID.BENEXT-user_away",
+        "title": {
+          "en": "User is away",
+          "nl": "Iemand is weggegaan"
+        },
+        "hint": {
+          "en": "Triggered when a user presses the away button of this tag reader and presents a valid code / tag.",
+          "nl": "Wordt uitgevoerd wanneer iemand op de afwezig knop van deze tag reader drukt en een geldige code / tag invoert."
+        },
+        "tokens": [
+          {
+            "name": "userId",
+            "type": "number",
+            "title": {
+              "en": "User ID",
+              "nl": "Gebruikers ID"
+            },
+            "example": 2
+          },
+          {
+            "name": "userName",
+            "title": {
+              "en": "Username",
+              "nl": "Gebruikersnaam"
+            },
+            "example": {
+              "en": "Test",
+              "nl": "Test"
+            }
+          },
+          {
+            "name": "tagId",
+            "type": "number",
+            "title": {
+              "en": "Tag ID",
+              "nl": "Tag ID"
+            },
+            "example": 1
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=WT-RFID.BENEXT"
+          }
+        ]
+      },
+      {
+        "id": "WT-RFID.BENEXT-user_home",
+        "title": {
+          "en": "User is home",
+          "nl": "Iemand is thuis gekomen"
+        },
+        "hint": {
+          "en": "Triggered when a user presses the home button of this tag reader and enters a valid code / presents a valid tag.",
+          "nl": "Wordt uitgevoerd wanneer iemand op de thuis knop van deze tag reader drukt en een geldige code / tag ingevoerd wordt."
+        },
+        "tokens": [
+          {
+            "name": "userId",
+            "type": "number",
+            "title": {
+              "en": "User ID",
+              "nl": "Gebruikers ID"
+            },
+            "example": 2
+          },
+          {
+            "name": "userName",
+            "title": {
+              "en": "Username",
+              "nl": "Gebruikersnaam"
+            },
+            "example": {
+              "en": "Test",
+              "nl": "Test"
+            }
+          },
+          {
+            "name": "tagId",
+            "type": "number",
+            "title": {
+              "en": "Tag ID",
+              "nl": "Tag ID"
+            },
+            "example": 1
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=WT-RFID.BENEXT"
+          }
+        ]
+      },
+      {
+        "id": "WT-RFID.BENEXT-user_system_away",
+        "title": {
+          "en": "System armed",
+          "nl": "Systeem geactiveerd"
+        },
+        "hint": {
+          "en": "Triggered when a user presses the away button on a tag reader and presents a valid code / tag.",
+          "nl": "Wordt uitgevoerd wanneer iemand op de afwezig knop op de tag reader drukt en een geldige code / tag invoert."
+        },
+        "tokens": [
+          {
+            "name": "userId",
+            "type": "number",
+            "title": {
+              "en": "User ID",
+              "nl": "Gebruikers ID"
+            },
+            "example": 2
+          },
+          {
+            "name": "userName",
+            "title": {
+              "en": "Username",
+              "nl": "Gebruikersnaam"
+            },
+            "example": {
+              "en": "Test",
+              "nl": "Test"
+            }
+          },
+          {
+            "name": "tagId",
+            "type": "number",
+            "title": {
+              "en": "Tag ID",
+              "nl": "Tag ID"
+            },
+            "example": 1
+          },
+          {
+            "name": "deviceId",
+            "title": {
+              "en": "Keypad ID",
+              "nl": "Keypad ID"
+            },
+            "example": {
+              "en": "123x",
+              "nl": "123x"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=WT-RFID.BENEXT"
+          }
+        ]
+      },
+      {
+        "id": "WT-RFID.BENEXT-user_system_home",
+        "title": {
+          "en": "System disarmed",
+          "nl": "Systeem gedeactiveerd"
+        },
+        "hint": {
+          "en": "Triggered when a user presses the home button on a tag reader and presents a valid code / tag.",
+          "nl": "Wordt uitgevoerd wanneer iemand op de thuis knop op de tag reader drukt en een geldige code / tag invoert."
+        },
+        "tokens": [
+          {
+            "name": "userId",
+            "type": "number",
+            "title": {
+              "en": "User ID",
+              "nl": "Gebruikers ID"
+            },
+            "example": 2
+          },
+          {
+            "name": "userName",
+            "title": {
+              "en": "Username",
+              "nl": "Gebruikersnaam"
+            },
+            "example": {
+              "en": "Test",
+              "nl": "Test"
+            }
+          },
+          {
+            "name": "tagId",
+            "type": "number",
+            "title": {
+              "en": "Tag ID",
+              "nl": "Tag ID"
+            },
+            "example": 1
+          },
+          {
+            "name": "deviceId",
+            "title": {
+              "en": "RFID keypad ID",
+              "nl": "RFID keypad ID"
+            },
+            "example": {
+              "en": "123x",
+              "nl": "123x"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=WT-RFID.BENEXT"
+          }
+        ]
+      },
+      {
+        "id": "WT-RFID.BENEXT-user_unknown",
+        "title": {
+          "en": "Usercode is unknown",
+          "nl": "Iemand heeft een onbekende code ingevoerd"
+        },
+        "hint": {
+          "en": "Triggered when an unknown tag is used or an invalid code was entered.",
+          "nl": "Wordt uitgevoerd wanneer iemand een onbekende tag gebruikt of een verkeerde code ingevoerd heet."
+        },
+        "tokens": [
+          {
+            "name": "userCode",
+            "title": {
+              "en": "Code/Tag",
+              "nl": "Code/Tag"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=WT-RFID.BENEXT"
+          }
+        ]
+      },
+      {
         "id": "WT-RFID.EU-start_scene",
         "title": {
           "en": "Scene activated",
@@ -314,6 +588,50 @@
     ],
     "conditions": [
       {
+        "id": "WT-RFID.BENEXT-is_at_home",
+        "title": {
+          "en": "Is !{{|not}} at home",
+          "nl": "Is !{{|niet}} thuis"
+        },
+        "hint": {
+          "en": "Select a person to check if this person is home or away.",
+          "nl": "Selecteer een persoon om te controleren of deze persoon thuis of afwezig is."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=WT-RFID.BENEXT"
+          },
+          {
+            "name": "person",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Who?",
+              "nl": "Wie?"
+            }
+          }
+        ]
+      },
+      {
+        "id": "WT-RFID.BENEXT-system_is_armed",
+        "title": {
+          "en": "Is !{{|not}} armed",
+          "nl": "Is !{{|not}} ingeschakeld"
+        },
+        "hint": {
+          "en": "If the system is armed.",
+          "nl": "Als het systeem is ingeschakeld."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=WT-RFID.BENEXT"
+          }
+        ]
+      },
+      {
         "id": "WT-RFID.EU-is_at_home",
         "title": {
           "en": "Is !{{|not}} at home",
@@ -359,6 +677,58 @@
       }
     ],
     "actions": [
+      {
+        "id": "WT-RFID.BENEXT-toggle_person_away",
+        "title": {
+          "en": "Mark as away",
+          "nl": "Is afwezig"
+        },
+        "hint": {
+          "en": "Select a person to set the status of the person to away.",
+          "nl": "Selecteer een persoon om de status van deze persoon op afwezig te zetten."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=WT-RFID.BENEXT"
+          },
+          {
+            "name": "person",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Who has gone away?",
+              "nl": "Wie is er afwezig?"
+            }
+          }
+        ]
+      },
+      {
+        "id": "WT-RFID.BENEXT-toggle_person_home",
+        "title": {
+          "en": "Mark as home",
+          "nl": "Is thuis"
+        },
+        "hint": {
+          "en": "Select a person to set the status of the person to home.",
+          "nl": "Selecteer een persoon om de status van deze persoon op thuis te zetten."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=WT-RFID.BENEXT"
+          },
+          {
+            "name": "person",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Who came home?",
+              "nl": "Wie is er thuis?"
+            }
+          }
+        ]
+      },
       {
         "id": "WT-RFID.EU-toggle_person_away",
         "title": {
@@ -415,26 +785,219 @@
   },
   "drivers": [
     {
+      "id": "WT-RFID.BENEXT",
+      "name": {
+        "en": "BeNext RFID keypad",
+        "nl": "BeNext RFID keypad"
+      },
+      "zwave": {
+        "manufacturerId": 138,
+        "productTypeId": 7,
+        "productId": [
+          512,
+          256,
+          257
+        ],
+        "learnmode": {
+          "image": "/drivers/WT-RFID.BENEXT/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the Enter button about two second until indication LED lights up, then immediately release to start the add/remove routine. Note: the rfid keypad must be close to homey.",
+            "nl": "Houd de Enter toets ongeveer twee seconde ingedrukt totdat de indicatie-LED aan gaat en laat hem dan meteen los om de procedure voor toevoegen / verwijderen te starten. Let op: de rfid keypad moet dicht bij homey in de buurt zijn."
+          }
+        },
+        "associationGroups": [
+          1
+        ],
+        "associationGroupsOptions": {},
+        "wakeUpInterval": 900,
+        "defaultConfiguration": [
+          {
+            "id": 7,
+            "size": 1,
+            "value": 1
+          }
+        ]
+      },
+      "class": "homealarm",
+      "capabilities": [
+        "measure_battery",
+        "alarm_tamper",
+        "user_code_report",
+        "homealarm_state",
+        "my_gateway_control"
+      ],
+      "mobile": {
+        "components": [
+          {
+            "id": "icon"
+          },
+          {
+            "id": "battery",
+            "capabilities": [
+              "measure_battery"
+            ]
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "homealarm_state",
+              "alarm_tamper"
+            ]
+          }
+        ]
+      },
+      "energy": {
+        "batteries": [
+          "AA",
+          "AA"
+        ]
+      },
+      "images": {
+        "large": "/drivers/WT-RFID.BENEXT/assets/images/large.png",
+        "small": "/drivers/WT-RFID.BENEXT/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "set_to_default",
+          "zwave": {
+            "index": 1,
+            "size": 1,
+            "signed": false
+          },
+          "type": "dropdown",
+          "label": {
+            "en": "Reset to factory settings",
+            "nl": "Fabrieksinstellingen terugzetten"
+          },
+          "hint": {
+            "en": "Set all configuration values to default values (factory settings).",
+            "nl": "Zet alle configuratie waarden terug naar de standaard instellingen."
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Don't reset settings",
+                "nl": "Wis gegevens niet"
+              }
+            },
+            {
+              "id": "255",
+              "label": {
+                "en": "Reset to factory settings",
+                "nl": "Fabrieksinstellingen terugzetten"
+              }
+            }
+          ]
+        },
+        {
+          "id": "feedback_time",
+          "zwave": {
+            "index": 2,
+            "size": 1,
+            "signed": false
+          },
+          "type": "number",
+          "label": {
+            "en": "Feedback time",
+            "nl": "Terugkoppel tijd"
+          },
+          "hint": {
+            "en": "To configure the time the beep is automatically turned off in seconds (0 = off, 1 - 244 = value in seconds, 255 = not turned off, default 15).",
+            "nl": "De tijd waarna de piep automatisch uitgezet wordt. (0 = uit, 1 - 244 = waarde in seconden, 255 = nooit, standaard: 15)."
+          },
+          "attr": {
+            "min": 0,
+            "max": 255
+          },
+          "value": 15
+        },
+        {
+          "id": "feedback_timeout",
+          "zwave": {
+            "index": 3,
+            "size": 1,
+            "signed": false
+          },
+          "type": "number",
+          "label": {
+            "en": "Feedback timeout",
+            "nl": "Terugkoppel timeout"
+          },
+          "hint": {
+            "en": "To configure the timeout to wait for a WAKEUP_NO_MORE_INFORMATION before the error beep is automatically sound. The error beeps are fixed 8 beeps shortly after each other (0 = off, 1 - 255 = value in seconds. Default 0).",
+            "nl": "Tijd waarna, bij het niet ontvangen van een WAKEUP_NO_MORE_INFORMATION frame van Homey, het apparaat error geluiden laad horen. De error piep is altijd 8 piepjes kort na elkaar (0 = uit, 1 - 255 = waarde in seconden, standaard: 0)."
+          },
+          "attr": {
+            "min": 0,
+            "max": 255
+          },
+          "value": 0
+        },
+        {
+          "id": "feedback_beeps_per_second",
+          "zwave": {
+            "index": 4,
+            "size": 1,
+            "signed": false
+          },
+          "type": "number",
+          "label": {
+            "en": "Feedback beeps per second",
+            "nl": "Terugekoppeling piepjes per seconde"
+          },
+          "hint": {
+            "en": "To configure the number of beeps per second. Every beep is fixed about 10ms (0 = off, 1 - 255 = number of beeps per second. Default: 2)",
+            "nl": "Het aantal piepjes per seconde. Elke piep duurt 10ms (0 = uit, 1 - 255 = aantal piepjes per seconde. Standaard: 2)."
+          },
+          "attr": {
+            "min": 0,
+            "max": 255
+          },
+          "value": 2
+        },
+        {
+          "id": "always_awake_mode",
+          "zwave": {
+            "index": 5,
+            "size": 1
+          },
+          "type": "dropdown",
+          "label": {
+            "en": "Always awake mode",
+            "nl": "Altijd wakker modus"
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "1",
+              "label": {
+                "en": "Mode 1, normal operating mode",
+                "nl": "Mode 1, normale modus"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "Always awake mode, Z-Wave chip is always on to request e.g. version or manufacturer id",
+                "nl": "Altijd wakker modus, Z-Wave chip is altijd klaar om een verzoek te ontvangen"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "WT-RFID.EU",
       "name": {
         "en": "Mini RFID keypad",
         "nl": "Mini RFID keypad"
       },
       "zwave": {
-        "manufacturerId": [
-          138,
-          151
-        ],
-        "productTypeId": [
-          24881,
-          7
-        ],
-        "productId": [
-          17665,
-          512,
-          256,
-          257
-        ],
+        "manufacturerId": 151,
+        "productTypeId": 24881,
+        "productId": 17665,
         "learnmode": {
           "image": "/drivers/WT-RFID.EU/assets/learnmode.svg",
           "instruction": {
