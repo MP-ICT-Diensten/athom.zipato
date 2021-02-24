@@ -5,9 +5,20 @@
         "nl": "Mini RFID keypad"
     },
     "zwave": {
-        "manufacturerId": 151,
-        "productTypeId": 24881,
-        "productId": 17665,
+        "manufacturerId": [
+            138,
+            151
+        ],
+        "productTypeId": [
+            24881,
+            7 
+        ],
+        "productId": [
+            17665,
+            512,
+            256,
+            257
+        ],
         "learnmode": {
             "image": "/drivers/WT-RFID.EU/assets/learnmode.svg",
             "instruction": {
